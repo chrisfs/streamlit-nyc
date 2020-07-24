@@ -30,7 +30,7 @@ data[['latitude','longitude']].to_csv('lat_long.csv', index=False)
 
 st.header("Where are the most people injured in NYC?")
 injured_people = st.slider("Number of persons injured in vehicle collisions", 0, 19)
-st.map(data.query("injured_persons >= @injured_people")[["latitude", "longitude"]].dropna(how="any"))
+st.map(data.query("injured_persons >= @injured_people")[["latitude", "longitude"]].dropna(how="any"),zoom = 11)
 
 st.header("How many collisions occur during a given time of day?")
 hour = st.slider("Hour to look at", 0, 23)
